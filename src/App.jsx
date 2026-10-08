@@ -54,7 +54,15 @@ export default function App() {
 
   /* Floating widget → "Check Availability" */
   const handleCheck = useCallback(() => {
-    if (!dates.checkIn || !dates.checkOut || dates.checkOut <= dates.checkIn) {
+    if (!dates.checkIn || !dates.checkOut) {
+      showToast('🌙 Please choose both a check-in and a check-out date.', 'error')
+      return
+    }
+    if (dates.checkIn < dates.today) {
+      showToast('🌙 Check-in can’t be in the past — please pick today or later.', 'error')
+      return
+    }
+    if (dates.checkOut <= dates.checkIn) {
       showToast('🌙 Please choose a check-out date after your check-in date.', 'error')
       return
     }

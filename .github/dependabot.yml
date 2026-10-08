@@ -1,0 +1,22 @@
+# Automated dependency updates — keeps npm packages (vite, react, …) and
+# GitHub Actions free of known vulnerabilities. Security updates open as PRs.
+version: 2
+updates:
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+    open-pull-requests-limit: 10
+    reviewers:
+      - 'hilloraella-rgb'
+    labels:
+      - 'dependencies'
+      - 'security'
+
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+    labels:
+      - 'dependencies'
+      - 'github-actions'

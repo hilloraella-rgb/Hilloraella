@@ -1,6 +1,7 @@
 import Reveal from './Reveal.jsx'
 import RoomCard from './RoomCard.jsx'
 import { rooms } from '../data/rooms.js'
+import { site } from '../config/site.js'
 
 const pretty = (iso) =>
   new Date(`${iso}T00:00:00`).toLocaleDateString(undefined, { day: 'numeric', month: 'short', year: 'numeric' })
@@ -37,7 +38,10 @@ export default function Rooms({ dates, availability, onBook, onEditDates }) {
         <Reveal delay={150} className="rooms-note">
           <p>
             🌿 Prefer to book personally? WhatsApp us at{' '}
-            <a href="https://wa.me/94712418114" target="_blank" rel="noreferrer">+94 71 24 18 114</a> — we reply within hours.
+            <a href={`https://wa.me/${site.primaryWhatsApp}`} target="_blank" rel="noreferrer">
+              {site.phones[0].label}
+            </a>{' '}
+            — we reply within hours.
           </p>
         </Reveal>
       </div>

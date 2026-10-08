@@ -34,9 +34,13 @@ export default function BookingModal({ room, dates, onClose }) {
 
   const summaryText =
     `Hello Hillora Ella! I'd like to book the ${room.name} ` +
-    `from ${dates.checkIn} to ${dates.checkOut} (${nights} night${nights > 1 ? 's' : ''}) ` +
-    `for ${dates.guests} guest(s). Ref: ${ref}.` +
-    `${form.name ? ` Name: ${form.name}.` : ''}`
+    `from ${pretty(dates.checkIn)} to ${pretty(dates.checkOut)} ` +
+    `(${nights} night${nights > 1 ? 's' : ''}, est. total $${total}) ` +
+    `for ${dates.guests} guest${dates.guests > 1 ? 's' : ''}. Ref: ${ref}.` +
+    `${form.name ? `\nName: ${form.name}.` : ''}` +
+    `${form.email ? `\nEmail: ${form.email}.` : ''}` +
+    `${form.phone ? `\nPhone/WhatsApp: ${form.phone}.` : ''}` +
+    `${form.notes ? `\nSpecial requests: ${form.notes}.` : ''}`
 
   const waHref = `https://wa.me/${site.primaryWhatsApp}?text=${encodeURIComponent(summaryText)}`
   const mailHref = `mailto:${site.email}?subject=${encodeURIComponent(`Booking ${ref} — ${room.name}`)}&body=${encodeURIComponent(summaryText)}`
@@ -79,19 +83,19 @@ export default function BookingModal({ room, dates, onClose }) {
               <div className="modal-fields">
                 <label>
                   Full name
-                  <input required value={form.name} onChange={set('name')} placeholder="Your name" autoFocus />
+                  <input required value={form.name} onChange={set('name')} placeholder="Your name" autoFocus autoComplete="name" maxLength={60} />
                 </label>
                 <label>
                   Email
-                  <input required type="email" value={form.email} onChange={set('email')} placeholder="you@example.com" />
+                  <input required type="email" value={form.email} onChange={set('email')} placeholder="you@example.com" autoComplete="email" maxLength={254} />
                 </label>
                 <label>
                   Phone / WhatsApp
-                  <input required type="tel" value={form.phone} onChange={set('phone')} placeholder="+94 …" />
+                  <input required type="tel" value={form.phone} onChange={set('phone')} placeholder="+94 …" autoComplete="tel" maxLength={30} />
                 </label>
                 <label className="full">
                   Special requests <em>(optional)</em>
-                  <textarea rows="2" value={form.notes} onChange={set('notes')} placeholder="Airport pickup, vegan cake, early check-in…" />
+                  <textarea rows="2" value={form.notes} onChange={set('notes')} placeholder="Airport pickup, vegan cake, early check-in…" maxLength={500} />
                 </label>
               </div>
 
