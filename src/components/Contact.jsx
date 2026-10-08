@@ -67,7 +67,7 @@ export default function Contact() {
               src={site.mapEmbed}
               loading="lazy"
               allowFullScreen
-              referrerPolicy="no-referrer-when-downgrade"
+              referrerPolicy="strict-origin-when-cross-origin"
             />
             <span className="map-badge">📍 Kithal Ella, Ella</span>
           </Reveal>

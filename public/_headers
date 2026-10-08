@@ -1,0 +1,12 @@
+# Security headers for static hosts that honour the _headers convention
+# (Netlify, Cloudflare Pages, …). Harmless everywhere else — the same policy
+# is also shipped as a <meta> CSP tag in the built HTML.
+#
+# NOTE: no X-Frame-Options / frame-ancestors on purpose, so the site can still
+# be embedded (previews, business listings). Add `X-Frame-Options: DENY` here
+# only if the site is never embedded anywhere.
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src https://www.google.com https://maps.google.com; base-uri 'self'; form-action 'self'; object-src 'none'
