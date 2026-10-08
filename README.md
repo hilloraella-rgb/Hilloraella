@@ -1,1 +1,58 @@
-# Hilloraella
+# 🏔️ Hillora Ella — A Quiet Stay in the Hills
+
+The official booking website for **Hillora Ella**, an eco-friendly, vegan-friendly
+mountain retreat in **Kithal Ella, Ella, Sri Lanka**.
+
+Built with React + Vite and a hand-crafted **"Natural Organic" 3D design system**:
+sage / forest / matcha greens over warm beige, off-white and soft sand, with soft
+elevated shadows, subtle gradients, glassmorphic and neumorphic surfaces.
+
+## ✨ Features
+
+- **Sticky glassmorphic navbar** with scroll-spy, mobile menu and 3D "Book Now" CTA
+- **Full-screen hero** with a floating 3D booking widget (check-in / check-out / guests)
+- **Availability check** with validation, toast feedback and per-room capacity logic
+- **Room cards** (image, title, capacity, eco amenities, price) with a booking modal
+  that hands off to **WhatsApp / email** with a pre-filled confirmation message
+- **Why Choose Us** 3D tilt cards · **About** section · **Gallery** with lightbox
+- **"Connect & Follow Our Journey"** social grid (Instagram, Facebook, YouTube,
+  TikTok, Pinterest, Threads)
+- **Contact & footer** with embedded Google Map, address, email, direct + WhatsApp
+  phone lines (Sri Lanka ×2, France ×1) and Google Business Profile review link
+- Fully responsive, **mobile-first**, `prefers-reduced-motion` aware, zero icon/CDN deps
+
+## 🚀 Run it
+
+```bash
+npm install
+npm run dev      # local dev server
+npm run build    # production build → dist/
+npm run preview  # serve the production build
+```
+
+## 🖼️ Swapping in the real photos & logo
+
+All imagery currently uses generated stand-ins. Every slot on the page is visibly
+labeled with a dashed **`INSERT_REAL_MAPS_IMAGE_HERE`** badge.
+
+1. Pull the real photos from the [Google Maps listing](https://maps.app.goo.gl/st65DzDzJ9mktRhm9)
+   (or the Hillora Ella social channels).
+2. Replace the files in `public/assets/images/` **keeping the same file names** —
+   see [`public/assets/images/README.md`](public/assets/images/README.md) for the slot map.
+3. Logo: upload the official logo, save it as `public/assets/images/logo.png`, and
+   swap the internals of `src/components/Logo.jsx` for an `<img>` tag (instructions
+   are in the component header).
+
+## 🔌 Booking flow (placeholder logic)
+
+`Check Availability` → validates dates → highlights availability above the rooms.
+`Book This Room` → modal form → success screen with **Confirm on WhatsApp** /
+**Confirm by Email** buttons. To go live, point the form's submit handler at your
+reservations API or a service like Formspree/Resmo.
+
+## 📞 Real-world details wired in
+
+- Address: No. 54, Yahalegoda, Kithal Ella, Ella, Sri Lanka (map embedded)
+- Email: hilloraella@gmail.com
+- Phones / WhatsApp: +94 71 24 18 114 · +94 76 65 38 114 · +33 75 840 3274 (France)
+- Google Business Profile: https://maps.app.goo.gl/st65DzDzJ9mktRhm9
