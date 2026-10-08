@@ -3,6 +3,9 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "description": "Hillora Ella — A Quiet Stay in the Hills. Eco-friendly, vegan-friendly mountain retreat booking website (Ella, Sri Lanka).",
   "scripts": {
     "dev": "vite",

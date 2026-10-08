@@ -30,6 +30,29 @@ npm run build    # production build → dist/
 npm run preview  # serve the production build
 ```
 
+## 🖥️ If the site "doesn't load" locally
+
+This is a Vite + React app — it must be served by the dev server.
+**Double-clicking `index.html` will not work** (blank page is expected via `file://`).
+
+```bash
+# 1. Node 18+ is required — check with:  node -v   (repo ships a .nvmrc for Node 20)
+# 2. Install dependencies (one time only):
+npm install
+# 3. Start the server and open the printed URL (usually http://localhost:5173):
+npm run dev
+```
+
+Common fixes:
+
+| Symptom                              | Fix                                              |
+| ------------------------------------ | ------------------------------------------------ |
+| `vite: command not found`            | Run `npm install` first                          |
+| Blank page from `index.html` click   | Use `npm run dev` and open `http://localhost:5173` |
+| `Vite requires Node.js version 18+`  | Upgrade Node (LTS 20) or `nvm use`               |
+| Port already in use                  | `npm run dev -- --port 5174`                     |
+| Production sanity check              | `npm run build && npm run preview`               |
+
 ## 🖼️ Swapping in the real photos & logo
 
 All imagery currently uses generated stand-ins. Every slot on the page is visibly
