@@ -39,9 +39,11 @@ labeled with a dashed **`INSERT_REAL_MAPS_IMAGE_HERE`** badge.
    (or the Hillora Ella social channels).
 2. Replace the files in `public/assets/images/` **keeping the same file names** —
    see [`public/assets/images/README.md`](public/assets/images/README.md) for the slot map.
-3. Logo: upload the official logo, save it as `public/assets/images/logo.png`, and
-   swap the internals of `src/components/Logo.jsx` for an `<img>` tag (instructions
-   are in the component header).
+3. Logo: the official Hillora Ella mark is integrated from
+   `public/assets/images/logo.png` (navbar top-left + footer brand plate + favicon).
+   To update it, simply overwrite that file — no code changes needed. Both
+   placements use light organic surfaces and a `multiply` blend so the artwork
+   always keeps full contrast.
 
 ## 🔌 Booking flow (placeholder logic)
 

@@ -13,12 +13,15 @@ const quickLinks = [
 export default function Footer() {
   return (
     <footer className="footer">
-      <div className="container footer-grid">
-        <div className="footer-brand">
-          <span className="footer-logo"><Logo height={46} /></span>
+      {/* Brand plate — official logo, above the contact details */}
+      <div className="container footer-top">
+        <div className="footer-logo-plate">
+          <Logo height={132} className="logo--footer" />
+        </div>
+        <div className="footer-intro">
           <p>
-            Eco-friendly, vegan-inspired quiet luxury in the misty mountains of Ella, Sri Lanka.
-            Come for the views — stay for the stillness.
+            Eco-friendly, vegan-inspired quiet luxury in the misty mountains of Ella,
+            Sri Lanka. Come for the views — stay for the stillness.
           </p>
           <div className="footer-socials">
             {socials.map((s) => {
@@ -31,7 +34,9 @@ export default function Footer() {
             })}
           </div>
         </div>
+      </div>
 
+      <div className="container footer-grid">
         <nav className="footer-col" aria-label="Footer">
           <h4>Explore</h4>
           {quickLinks.map(([label, href]) => (

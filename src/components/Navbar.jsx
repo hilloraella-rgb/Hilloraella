@@ -37,7 +37,7 @@ export default function Navbar({ activeId, onBookNow }) {
     <header className={`nav ${scrolled || open ? 'nav--solid' : ''}`}>
       <div className="container nav-inner">
         <a href="#home" className="brand" aria-label="Hillora Ella — home" onClick={(e) => { e.preventDefault(); go('#home') }}>
-          <Logo height={44} />
+          <Logo height={56} className="logo--nav" />
         </a>
 
         <nav className="nav-links" aria-label="Primary">
